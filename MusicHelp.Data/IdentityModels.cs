@@ -33,6 +33,9 @@ namespace MusicHelp.Data
         }
 
         //public DbSets go here
+        public DbSet<Instrument> Instruments { get; set; }
+        public DbSet<Lesson> Lessons { get; set; }
+        public DbSet<Tablature> Tabs { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
