@@ -8,6 +8,7 @@ namespace MusicHelp.Models
 {
     public class InstrumentCreate
     {
+        public int InstrumentID { get; set; }
         public string InstrumentName { get; set; }
     }
 }

@@ -58,6 +58,10 @@
     <Compile Include="01_InstrumentDetail.cs" />
     <Compile Include="01_InstrumentEdit.cs" />
     <Compile Include="01_InstrumentListItem.cs" />
+    <Compile Include="02_LessonCreate.cs" />
+    <Compile Include="02_LessonDetail.cs" />
+    <Compile Include="02_LessonEdit.cs" />
+    <Compile Include="02_LessonListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
