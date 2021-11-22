@@ -11,7 +11,7 @@ namespace MusicHelp.Data
     {
         [Key]
         public int InstrumentID { get; set; }
-
+        public Guid OwnerID { get; set; }
         public virtual List<Lesson> _lessons { get; set; }
         public virtual List<Tablature> _tabs { get; set; }
         [Required]

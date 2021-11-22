@@ -12,6 +12,7 @@ namespace MusicHelp.Data
     {
         [Key]
         public int LessonID { get; set; }
+        public Guid OwnerID { get; set; }
         [ForeignKey(nameof(Instrument))]
         public int InstrumentID { get; set; }
         public Instrument Instrument { get; set; }

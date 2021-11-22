@@ -16,6 +16,7 @@ namespace MusicHelp.Data
         public Instrument Instrument { get; set; }
         [ForeignKey(nameof(Lesson))]
         public int LessonID { get; set; }
+        public Guid OwnerID { get; set; }
         public Lesson Lesson { get; set; }
         [Required]
         [Display(Name = "Song Name")]
