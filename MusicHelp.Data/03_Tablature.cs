@@ -35,7 +35,9 @@ namespace MusicHelp.Data
         [Required]
         [Display(Name = "Please enter the link for this tab.")]
         public string TabLink { get; set; }
+        [Display(Name = "Date Published")]
         public DateTimeOffset CreatedUtc { get; set; }
+        public DateTimeOffset? ModifiedUtc { get; set; }
 
     }
 }

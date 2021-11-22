@@ -34,6 +34,7 @@ namespace MusicHelp.Data
         [Required]
         [Display(Name ="Please enter the URL for your lesson.")]
         public string LessonLink { get; set; }
+        [Display(Name = "Date Published")]
         public DateTimeOffset CreatedUtc { get; set; }
         public DateTimeOffset? ModifiedUtc { get; set; }
     }

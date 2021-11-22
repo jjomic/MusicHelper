@@ -62,6 +62,10 @@
     <Compile Include="02_LessonDetail.cs" />
     <Compile Include="02_LessonEdit.cs" />
     <Compile Include="02_LessonListItem.cs" />
+    <Compile Include="03_TablatureCreate.cs" />
+    <Compile Include="03_TablatureDetail.cs" />
+    <Compile Include="03_TablatureEdit.cs" />
+    <Compile Include="03_TablatureListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -17,6 +17,7 @@ namespace MusicHelp.Data
         [Required]
         [Display(Name = "Instrument")]
         public string InstrumentName { get; set; }
+        [Display(Name = "Added")]
         public DateTimeOffset CreatedUtc { get; set; }
         public DateTimeOffset? ModifiedUtc { get; set; }
     }
