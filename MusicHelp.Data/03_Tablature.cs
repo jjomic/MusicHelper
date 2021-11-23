@@ -11,6 +11,7 @@ namespace MusicHelp.Data
     public class Tablature
     {
         [Key]
+        public int TabID { get; set; }
         [ForeignKey(nameof(Instrument))]
         public int InstrumentID { get; set; }
         public Instrument Instrument { get; set; }
@@ -32,7 +33,7 @@ namespace MusicHelp.Data
         public int TabDifficulty { get; set; }
         [Required]
         [Display(Name = "Please enter the original source of this tab.")]
-        public string OriginalSource { get; set; }
+        public string TabSource { get; set; }
         [Required]
         [Display(Name = "Please enter the link for this tab.")]
         public string TabLink { get; set; }
