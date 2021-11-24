@@ -1,0 +1,90 @@
+﻿@model MusicHelp.Models.TablatureDetail
+
+@{
+    ViewBag.Title = "Tab Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TablatureDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TabID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TabID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InstrumentID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InstrumentID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TabName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TabName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TabArtist)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TabArtist)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TabAlbum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TabAlbum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TabDifficulty)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TabDifficulty)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TabSource)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TabSource)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TabLink)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TabLink)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedUtc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedUtc)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Tablature Index")
+</p>
