@@ -17,6 +17,8 @@ namespace MusicHelp.Services
             _userID = userID;
         }
 
+        public TablatureService() { }
+
         public bool CreateTab(TablatureCreate model)
         {
             var entity =
@@ -73,7 +75,7 @@ namespace MusicHelp.Services
                 var entity =
                     ctx
                         .Tabs
-                        .Single(e => e.TabID == id && e.OwnerID == _userID);
+                        .Single(e => e.TabID == id);
                 return
                     new TablatureDetail
                     {
@@ -97,7 +99,7 @@ namespace MusicHelp.Services
                 var entity =
                     ctx
                         .Tabs
-                        .Single(e => e.TabID == model.TabID && e.OwnerID == _userID);
+                        .Single(e => e.TabID == model.TabID);
 
                 entity.TabName = model.TabName;
                 entity.InstrumentID = model.InstrumentID;
@@ -119,7 +121,7 @@ namespace MusicHelp.Services
                 var entity =
                     ctx
                         .Tabs
-                        .Single(e => e.TabID == tabID && e.OwnerID == _userID);
+                        .Single(e => e.TabID == tabID);
 
                 ctx.Tabs.Remove(entity);
 

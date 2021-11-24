@@ -63,7 +63,7 @@ namespace MusicHelp.Services
                 var entity =
                     ctx
                         .Instruments
-                        .Single(e => e.InstrumentID == id && e.OwnerID == _userID);
+                        .Single(e => e.InstrumentID == id);
                 return
                     new InstrumentDetail
                     {
@@ -81,7 +81,7 @@ namespace MusicHelp.Services
                 var entity =
                     ctx
                         .Instruments
-                        .Single(e => e.InstrumentID == model.InstrumentID && e.OwnerID == _userID);
+                        .Single(e => e.InstrumentID == model.InstrumentID);
 
                 entity.InstrumentName = model.InstrumentName;
                 entity.ModifiedUtc = DateTimeOffset.UtcNow;
@@ -97,7 +97,7 @@ namespace MusicHelp.Services
                 var entity =
                     ctx
                         .Instruments
-                        .Single(e => e.InstrumentID == instrumentID && e.OwnerID == _userID);
+                        .Single(e => e.InstrumentID == instrumentID);
 
                 ctx.Instruments.Remove(entity);
 

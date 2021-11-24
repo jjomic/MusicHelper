@@ -14,8 +14,7 @@ namespace MusicHelper.Controllers
         // GET: Tablature
         public ActionResult Index()
         {
-            var userID = Guid.Parse(User.Identity.GetUserId());
-            var service = new TablatureService(userID);
+            var service = CreateUnauthenticatedTablatureService();
             var model = service.GetTabs();
 
             return View(model);
@@ -122,6 +121,12 @@ namespace MusicHelper.Controllers
         {
             var userID = Guid.Parse(User.Identity.GetUserId());
             var service = new TablatureService(userID);
+            return service;
+        }
+
+        private TablatureService CreateUnauthenticatedTablatureService()
+        {
+            var service = new TablatureService();
             return service;
         }
     }

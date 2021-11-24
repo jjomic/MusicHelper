@@ -76,7 +76,7 @@ namespace MusicHelp.Services
                 var entity =
                     ctx
                         .Lessons
-                        .Single(e => e.LessonID == id && e.OwnerID == _userID);
+                        .Single(e => e.LessonID == id);
                 return
                     new LessonDetail
                     {
@@ -99,7 +99,7 @@ namespace MusicHelp.Services
                 var entity =
                     ctx
                         .Lessons
-                        .Single(e => e.LessonID == model.LessonID && e.OwnerID == _userID);
+                        .Single(e => e.LessonID == model.LessonID);
 
                 entity.LessonName = model.LessonName;
                 entity.InstrumentID = model.InstrumentID;
@@ -120,7 +120,7 @@ namespace MusicHelp.Services
                 var entity =
                     ctx
                         .Lessons
-                        .Single(e => e.LessonID == lessonID && e.OwnerID == _userID);
+                        .Single(e => e.LessonID == lessonID);
 
                 ctx.Lessons.Remove(entity);
 
