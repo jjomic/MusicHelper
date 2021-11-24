@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNet.Identity;
+using MusicHelp.Data;
 using MusicHelp.Models;
 using MusicHelp.Services;
 using System;
@@ -11,14 +12,11 @@ namespace MusicHelper.Controllers
 {
     public class InstrumentController : Controller
     {
+        private ApplicationDbContext _db = new ApplicationDbContext();
         // GET: Instrument
         public ActionResult Index()
         {
-            var userID = Guid.Parse(User.Identity.GetUserId());
-            var service = new InstrumentService(userID);
-            var model = service.GetInstruments();
-
-            return View(model);
+            return View(_db.Instruments.ToList());
         }
 
         public ActionResult Create()

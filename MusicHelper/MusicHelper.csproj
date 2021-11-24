@@ -237,7 +237,6 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Instrument\Index.cshtml" />
     <Content Include="Views\Instrument\Create.cshtml" />
     <Content Include="Views\Instrument\Details.cshtml" />
     <Content Include="Views\Instrument\Edit.cshtml" />
@@ -252,6 +251,7 @@
     <Content Include="Views\Tablature\Details.cshtml" />
     <Content Include="Views\Tablature\Edit.cshtml" />
     <Content Include="Views\Tablature\Delete.cshtml" />
+    <Content Include="Views\Instrument\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
