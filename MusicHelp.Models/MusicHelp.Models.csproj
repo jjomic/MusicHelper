@@ -72,5 +72,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MusicHelp.Data\MusicHelp.Data.csproj">
+      <Project>{59E8D857-A40C-446C-BF9D-60FCCD8F98C0}</Project>
+      <Name>MusicHelp.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

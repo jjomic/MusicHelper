@@ -48,7 +48,7 @@ namespace MusicHelper.Controllers
 
         public ActionResult Details(int id)
         {
-            var svc = CreateLessonService();
+            var svc = CreateUnauthenticatedLessonService();
             var model = svc.GetLessonByID(id);
             return View(model);
         }
