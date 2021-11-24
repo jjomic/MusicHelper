@@ -29,11 +29,6 @@
         <th>
             @Html.DisplayNameFor(model => model.TabDifficulty)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TabSource)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TabLink)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.CreatedUtc)
@@ -62,18 +57,12 @@
             @Html.DisplayFor(modelItem => item.TabDifficulty)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.TabSource)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TabLink)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.CreatedUtc)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            @Html.ActionLink("Update", "Edit", new { id = item.TabID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.TabID }) |
+            @Html.ActionLink("Remove", "Delete", new { id = item.TabID })
         </td>
     </tr>
 }

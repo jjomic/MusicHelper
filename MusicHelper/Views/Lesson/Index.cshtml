@@ -21,16 +21,7 @@
             @Html.DisplayNameFor(model => model.LessonName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.LessonDescription)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.LessonDifficulty)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.LessonSource)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.LessonLink)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.CreatedUtc)
@@ -50,24 +41,15 @@
             @Html.DisplayFor(modelItem => item.LessonName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.LessonDescription)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.LessonDifficulty)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LessonSource)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LessonLink)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.CreatedUtc)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            @Html.ActionLink("Update", "Edit", new { id = item.LessonID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.LessonID }) |
+            @Html.ActionLink("Remove", "Delete", new { id = item.LessonID })
         </td>
     </tr>
 }
