@@ -17,6 +17,8 @@ namespace MusicHelp.Services
             _userID = userID;
         }
 
+        public InstrumentService() { }
+
         public bool CreateInstrument(InstrumentCreate model)
         {
             var entity =
@@ -41,7 +43,6 @@ namespace MusicHelp.Services
                 var query =
                     ctx
                         .Instruments
-                        .Where(e => e.OwnerID == _userID)
                         .Select(
                             e =>
                                 new InstrumentListItem

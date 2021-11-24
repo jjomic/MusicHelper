@@ -17,6 +17,11 @@ namespace MusicHelp.Services
             _userID = userID;
         }
 
+        public LessonService()
+        {
+
+        }
+
         public bool CreateLesson(LessonCreate model)
         {
             var entity =
@@ -46,7 +51,6 @@ namespace MusicHelp.Services
                 var query =
                     ctx
                         .Lessons
-                        .Where(e => e.OwnerID == _userID)
                         .Select(
                             e =>
                                 new LessonListItem

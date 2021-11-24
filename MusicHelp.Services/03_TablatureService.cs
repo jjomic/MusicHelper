@@ -47,7 +47,6 @@ namespace MusicHelp.Services
                 var query =
                     ctx
                         .Tabs
-                        .Where(e => e.OwnerID == _userID)
                         .Select(
                             e =>
                                 new TablatureListItem

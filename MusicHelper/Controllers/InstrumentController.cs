@@ -16,7 +16,10 @@ namespace MusicHelper.Controllers
         // GET: Instrument
         public ActionResult Index()
         {
-            return View(_db.Instruments.ToList());
+            var service = CreateUnauthenticatedInstrumentService();
+            var model = service.GetInstruments();
+
+            return View(model);
         }
 
         public ActionResult Create()
@@ -114,6 +117,12 @@ namespace MusicHelper.Controllers
         {
             var userID = Guid.Parse(User.Identity.GetUserId());
             var service = new InstrumentService(userID);
+            return service;
+        }
+
+        private InstrumentService CreateUnauthenticatedInstrumentService()
+        {
+            var service = new InstrumentService();
             return service;
         }
     }

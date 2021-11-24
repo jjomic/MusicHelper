@@ -16,7 +16,10 @@ namespace MusicHelper.Controllers
         // GET: Lesson
         public ActionResult Index()
         {
-            return View(_db.Lessons.ToList());
+            var service = CreateUnauthenticatedLessonService();
+            var model = service.GetLessons();
+
+            return View(model);
         }
 
         public ActionResult Create()
@@ -119,6 +122,12 @@ namespace MusicHelper.Controllers
         {
             var userID = Guid.Parse(User.Identity.GetUserId());
             var service = new LessonService(userID);
+            return service;
+        }
+
+        private LessonService CreateUnauthenticatedLessonService()
+        {
+            var service = new LessonService();
             return service;
         }
     }
