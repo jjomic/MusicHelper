@@ -38,7 +38,7 @@ namespace MusicHelper.Controllers
             if (service.CreateLesson(model))
             {
                 TempData["SaveResult"] = "Lesson added to the database.";
-                return RedirectToAction("Lesson Index");
+                return RedirectToAction("Index");
             };
 
             ModelState.AddModelError("", "This lesson could not be added.");
@@ -46,14 +46,14 @@ namespace MusicHelper.Controllers
             return View(model);
         }
 
-        public ActionResult LessonDetails(int id)
+        public ActionResult Details(int id)
         {
             var svc = CreateLessonService();
             var model = svc.GetLessonByID(id);
             return View(model);
         }
 
-        public ActionResult LessonEdit(int id)
+        public ActionResult Edit(int id)
         {
             var service = CreateLessonService();
             var detail = service.GetLessonByID(id);
@@ -73,7 +73,7 @@ namespace MusicHelper.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult LessonEdit(int id, LessonEdit model)
+        public ActionResult Edit(int id, LessonEdit model)
         {
             if (!ModelState.IsValid) return View(model);
 

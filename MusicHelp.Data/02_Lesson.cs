@@ -4,12 +4,16 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace MusicHelp.Data
 {
     public class Lesson
     {
+        private static readonly Regex regex = new Regex("((http://|www\\.)([A-Z0-9.-:]{1,})\\.[0-9A-Z?;~&#=\\-_\\./]{2,})", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+        private static readonly string link = "<a href=\"{0}{1}\">{2}</a>";
+
         [Key]
         public int LessonID { get; set; }
         public Guid OwnerID { get; set; }

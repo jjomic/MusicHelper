@@ -63,15 +63,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.TabSource)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TabLink)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TabLink)
+            <a href="@Model.TabLink" target="_blank">@Html.DisplayFor(model => model.TabSource)</a>
         </dd>
 
         <dt>

@@ -44,14 +44,14 @@ namespace MusicHelper.Controllers
             return View(model);
         }
 
-        public ActionResult TabDetails(int id)
+        public ActionResult Details(int id)
         {
             var svc = CreateTablatureService();
             var model = svc.GetTabByID(id);
             return View(model);
         }
 
-        public ActionResult TabEdit(int id)
+        public ActionResult Edit(int id)
         {
             var service = CreateTablatureService();
             var detail = service.GetTabByID(id);
@@ -72,7 +72,7 @@ namespace MusicHelper.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult TabEdit(int id, TablatureEdit model)
+        public ActionResult Edit(int id, TablatureEdit model)
         {
             if (!ModelState.IsValid) return View(model);
 

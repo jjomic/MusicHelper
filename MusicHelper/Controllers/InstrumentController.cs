@@ -46,14 +46,14 @@ namespace MusicHelper.Controllers
             return View(model);
         }
 
-        public ActionResult InstrumentDetails(int id)
+        public ActionResult Details(int id)
         {
             var svc = CreateInstrumentService();
             var model = svc.GetInstrumentByID(id);
             return View(model);
         }
 
-        public ActionResult InstrumentEdit(int id)
+        public ActionResult Edit(int id)
         {
             var service = CreateInstrumentService();
             var detail = service.GetInstrumentByID(id);
@@ -68,7 +68,7 @@ namespace MusicHelper.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult InstrumentEdit(int id, InstrumentEdit model)
+        public ActionResult Edit(int id, InstrumentEdit model)
         {
             if (!ModelState.IsValid) return View(model);
 
