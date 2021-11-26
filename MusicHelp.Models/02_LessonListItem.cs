@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MusicHelp.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -13,6 +14,7 @@ namespace MusicHelp.Models
         public int LessonID { get; set; }
         [Display(Name = "Lesson is for...")]
         public int InstrumentID { get; set; }
+        public Instrument Instrument { get; set; }
         [Display(Name = "Lesson Title")]
         public string LessonName { get; set; }
         [Display(Name = "Description")]

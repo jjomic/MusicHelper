@@ -11,6 +11,7 @@ namespace MusicHelp.Models
     {
         public int LessonID { get; set; }
         public int InstrumentID { get; set; }
+        public Instrument Instrument { get; set; }
         public string LessonName { get; set; }
         public string LessonDescription { get; set; }
         public int LessonDifficulty { get; set; }

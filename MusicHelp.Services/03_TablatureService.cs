@@ -56,6 +56,7 @@ namespace MusicHelp.Services
                                 {
                                     TabID = e.TabID,
                                     InstrumentID = e.InstrumentID,
+                                    Instrument = e.Instrument,
                                     TabName = e.TabName,
                                     TabArtist = e.TabArtist,
                                     TabAlbum = e.TabAlbum,
@@ -83,6 +84,7 @@ namespace MusicHelp.Services
                         TabID = entity.TabID,
                         TabName = entity.TabName,
                         InstrumentID = entity.InstrumentID,
+                        Instrument = entity.Instrument,
                         TabArtist = entity.TabArtist,
                         TabAlbum = entity.TabAlbum,
                         TabDifficulty = entity.TabDifficulty,
