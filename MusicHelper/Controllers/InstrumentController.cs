@@ -22,6 +22,7 @@ namespace MusicHelper.Controllers
             return View(model);
         }
 
+        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -53,6 +54,7 @@ namespace MusicHelper.Controllers
             return View(model);
         }
 
+        [Authorize]
         public ActionResult Edit(int id)
         {
             var service = CreateInstrumentService();
@@ -90,6 +92,7 @@ namespace MusicHelper.Controllers
             return View(model);
         }
 
+        [Authorize]
         [ActionName("Delete")]
         public ActionResult Delete(int id)
         {
@@ -99,6 +102,7 @@ namespace MusicHelper.Controllers
             return View(model);
         }
 
+        [Authorize]
         [HttpPost]
         [ActionName("Delete")]
         [ValidateAntiForgeryToken]

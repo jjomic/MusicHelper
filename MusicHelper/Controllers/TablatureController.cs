@@ -19,7 +19,7 @@ namespace MusicHelper.Controllers
 
             return View(model);
         }
-
+        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -51,6 +51,7 @@ namespace MusicHelper.Controllers
             return View(model);
         }
 
+        [Authorize]
         public ActionResult Edit(int id)
         {
             var service = CreateTablatureService();
@@ -94,6 +95,7 @@ namespace MusicHelper.Controllers
             return View(model);
         }
 
+        [Authorize]
         [ActionName("Delete")]
         public ActionResult Delete(int id)
         {
