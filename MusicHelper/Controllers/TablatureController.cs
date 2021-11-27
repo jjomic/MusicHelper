@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNet.Identity;
+using MusicHelp.Data;
 using MusicHelp.Models;
 using MusicHelp.Services;
 using System;
@@ -11,6 +12,8 @@ namespace MusicHelper.Controllers
 {
     public class TablatureController : Controller
     {
+        private ApplicationDbContext _db = new ApplicationDbContext();
+
         // GET: Tablature
         public ActionResult Index()
         {
@@ -22,6 +25,7 @@ namespace MusicHelper.Controllers
         [Authorize]
         public ActionResult Create()
         {
+            PopulateInstrumentDropDownList();
             return View();
         }
 
@@ -29,12 +33,17 @@ namespace MusicHelper.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(TablatureCreate model)
         {
-            if (!ModelState.IsValid) return View(model);
+            if (!ModelState.IsValid) 
+            {
+                PopulateInstrumentDropDownList();
+                return View(model); 
+            }
 
             var service = CreateTablatureService();
 
             if (service.CreateTab(model))
             {
+                PopulateInstrumentDropDownList();
                 TempData["SaveResult"] = "Song added to the database.";
                 return RedirectToAction("Tablature Index");
             };
@@ -68,6 +77,9 @@ namespace MusicHelper.Controllers
                     TabSource = detail.TabSource,
                     TabLink = detail.TabLink
                 };
+
+            PopulateInstrumentDropDownList();
+
             return View(model);
         }
 
@@ -75,10 +87,15 @@ namespace MusicHelper.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, TablatureEdit model)
         {
-            if (!ModelState.IsValid) return View(model);
+            if (!ModelState.IsValid) 
+            {
+                PopulateInstrumentDropDownList();
+                return View(model); 
+            }
 
             if (model.TabID != id)
             {
+                PopulateInstrumentDropDownList();
                 ModelState.AddModelError("", "ID Mismatch");
                 return View(model);
             }
@@ -87,6 +104,7 @@ namespace MusicHelper.Controllers
 
             if (service.UpdateTab(model))
             {
+                PopulateInstrumentDropDownList();
                 TempData["SaveResult"] = "Song information has been updated.";
                 return RedirectToAction("Lesson Index");
             }
@@ -117,6 +135,13 @@ namespace MusicHelper.Controllers
             TempData["SaveResult"] = "This song's tab has now been deleted";
 
             return RedirectToAction("Tablature Index");
+        }
+
+        //Helper methods
+
+        public void PopulateInstrumentDropDownList()
+        {
+            ViewBag.Instruments = _db.Instruments.Select(inst => new SelectListItem { Value = inst.InstrumentID.ToString(), Text = inst.InstrumentName }).ToList();
         }
 
         private TablatureService CreateTablatureService()

@@ -10,7 +10,7 @@ namespace MusicHelp.Models
     public class LessonCreate
     {
         public int LessonID { get; set; }
-        [Display(Name ="Please select the ID that corresponds with the Instrument this is for...")]
+        [Display(Name ="What instrument is this lesson for?")]
         public int InstrumentID { get; set; }
         [Display(Name ="What is the title of this lesson?")]
         [MinLength(1, ErrorMessage = "You didn't enter anything...")]

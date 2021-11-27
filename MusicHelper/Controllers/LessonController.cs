@@ -25,6 +25,7 @@ namespace MusicHelper.Controllers
         [Authorize]
         public ActionResult Create()
         {
+            PopulateInstrumentDropdownList();
             return View();
         }
 
@@ -32,12 +33,16 @@ namespace MusicHelper.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(LessonCreate model)
         {
-            if (!ModelState.IsValid) return View(model);
-
+            if (!ModelState.IsValid)
+            {
+                PopulateInstrumentDropdownList();
+                return View(model);
+            }
             var service = CreateLessonService();
 
             if (service.CreateLesson(model))
             {
+                PopulateInstrumentDropdownList();
                 TempData["SaveResult"] = "Lesson added to the database.";
                 return RedirectToAction("Index");
             };
@@ -70,6 +75,9 @@ namespace MusicHelper.Controllers
                     LessonSource = detail.LessonSource,
                     LessonLink = detail.LessonLink
                 };
+
+            PopulateInstrumentDropdownList();
+
             return View(model);
         }
 
@@ -77,10 +85,14 @@ namespace MusicHelper.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, LessonEdit model)
         {
-            if (!ModelState.IsValid) return View(model);
-
+            if (!ModelState.IsValid)
+            {
+                PopulateInstrumentDropdownList();
+                return View(model);
+            }
             if (model.LessonID != id)
             {
+                PopulateInstrumentDropdownList();
                 ModelState.AddModelError("", "ID Mismatch");
                 return View(model);
             }
@@ -89,6 +101,7 @@ namespace MusicHelper.Controllers
 
             if (service.UpdateLesson(model))
             {
+                PopulateInstrumentDropdownList();
                 TempData["SaveResult"] = "Lesson information has been updated.";
                 return RedirectToAction("Lesson Index");
             }
@@ -119,6 +132,13 @@ namespace MusicHelper.Controllers
             TempData["SaveResult"] = "This lesson has now been deleted";
 
             return RedirectToAction("Lesson Index");
+        }
+
+        //Helper Methods
+
+        private void PopulateInstrumentDropdownList()
+        {
+            ViewBag.Instruments = _db.Instruments.Select(inst => new SelectListItem { Value = inst.InstrumentID.ToString(), Text = inst.InstrumentName }).ToList();
         }
 
         private LessonService CreateLessonService()
