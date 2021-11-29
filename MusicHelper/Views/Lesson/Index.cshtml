@@ -47,7 +47,7 @@
 
         @foreach (var instrument in Instruments)
         {
-            <div id="#@instrument.Value" class="tab-pane fade">
+            <div id="@instrument.Value" class="tab-pane fade">
                 @foreach (var item in Model.Where(i => i.InstrumentID.ToString() == instrument.Value))
                 {
                     <div class="col-md-3 board-container">
