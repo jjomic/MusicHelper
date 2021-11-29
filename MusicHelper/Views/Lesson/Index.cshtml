@@ -29,6 +29,7 @@
                     <div class="board-card">
                         <div class="card-header text-center">
                             @Html.ActionLink(item.LessonName, "Details", new { id = item.LessonID }, new { @style = "color:white;" })
+                            @Html.DisplayFor(modelItem => item.IsStarred, new { Id = item.LessonID })
                         </div>
                         <div class="card-body">
                             <ul>
@@ -54,6 +55,7 @@
                         <div class="board-card">
                             <div class="card-header text-center">
                                 @Html.ActionLink(item.LessonName, "Details", new { id = item.LessonID }, new { @style = "color:white;" })
+                                @Html.DisplayFor(modelItem => item.IsStarred, new { Id = item.LessonID })
                             </div>
                             <div class="card-body">
                                 <ul>
@@ -74,25 +76,55 @@
         <div id="fav" class="tab-pane fade">
             @foreach (var item in Model)
             {
-                <div class="col-md-3 board-container">
-                    <div class="board-card">
-                        <div class="card-header text-center">
-                            @Html.ActionLink(item.LessonName, "Details", new { id = item.LessonID }, new { @style = "color:white;" })
-                        </div>
-                        <div class="card-body">
-                            <ul>
-                                <li>Instrument: @Html.DisplayFor(modelItem => item.Instrument.InstrumentName)</li>
-                                <li>Difficulty: @Html.DisplayFor(modelItem => item.LessonDifficulty)</li>
-                            </ul>
-                        </div>
-                        <div class="card-editor text-center">
-                            @Html.ActionLink("Update", "Edit", new { id = item.LessonID })
-                            @Html.ActionLink("Remove", "Delete", new { id = item.LessonID })
+                if (item.IsStarred)
+                {
+                    <div class="col-md-3 board-container">
+                        <div class="board-card">
+                            <div class="card-header text-center">
+                                @Html.ActionLink(item.LessonName, "Details", new { id = item.LessonID }, new { @style = "color:white;" })
+                                @Html.DisplayFor(modelItem => item.IsStarred, new { Id = item.LessonID })
+                            </div>
+                            <div class="card-body">
+                                <ul>
+                                    <li>Instrument: @Html.DisplayFor(modelItem => item.Instrument.InstrumentName)</li>
+                                    <li>Difficulty: @Html.DisplayFor(modelItem => item.LessonDifficulty)</li>
+                                </ul>
+                            </div>
+                            <div class="card-editor text-center">
+                                @Html.ActionLink("Update", "Edit", new { id = item.LessonID })
+                                @Html.ActionLink("Remove", "Delete", new { id = item.LessonID })
+                            </div>
                         </div>
                     </div>
-                </div>
+                }
             }
         </div>
     </div>
 </div>
 
+@section scripts {
+    <script language="javascript" type="text/javascript">
+        $(document).ready(function () {
+            $("i[data-toggle='star']")
+                .css({ "cursor": "pointer" })
+                .click(function (e) {
+                    var target = $(e.target);
+                    var lessonId = target.attr("data-id");
+                    var starSet = target.hasClass("glyphicon-star");
+
+                    $.ajax({
+                        method: starSet ? "DELETE" : "PUT",
+                        url: "/api/Lesson/" + lessonId + "/star",
+                        data: null
+                    })
+                        .done(function (r) {
+                            target.removeClass();
+                            target.addClass("glyphicon " + (starSet ? "glyphicon-star-empty" : "glyphicon-star"));
+                        })
+                        .fail(function (r) {
+                            alert("Failed to change star status");
+                        });
+                });
+        });
+    </script>
+}

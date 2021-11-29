@@ -64,7 +64,8 @@ namespace MusicHelp.Services
                                     LessonDifficulty = e.LessonDifficulty,
                                     LessonSource = e.LessonSource,
                                     LessonLink = e.LessonLink,
-                                    CreatedUtc = e.CreatedUtc
+                                    CreatedUtc = e.CreatedUtc,
+                                    IsStarred = e.IsStarred
                                 }
                         );
                 return query.ToArray();
@@ -111,6 +112,7 @@ namespace MusicHelp.Services
                 entity.LessonSource = model.LessonSource;
                 entity.LessonLink = model.LessonLink;
                 entity.ModifiedUtc = DateTimeOffset.UtcNow;
+                entity.IsStarred = model.IsStarred;
 
                 return ctx.SaveChanges() == 1;
             }

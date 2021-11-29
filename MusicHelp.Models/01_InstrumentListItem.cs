@@ -17,5 +17,7 @@ namespace MusicHelp.Models
         [Display(Name = "Date Added")]
         public DateTimeOffset CreatedUtc { get; set; }
         public DateTimeOffset? ModifiedUtc { get; set; }
+        [UIHint("Starred")]
+        public bool IsStarred { get; set; }
     }
 }

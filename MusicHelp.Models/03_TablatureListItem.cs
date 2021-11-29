@@ -1,6 +1,7 @@
 ﻿using MusicHelp.Data;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,5 +20,8 @@ namespace MusicHelp.Models
         public string TabSource { get; set; }
         public string TabLink { get; set; }
         public DateTimeOffset CreatedUtc { get; set; }
+        [UIHint("Starred")]
+        public bool IsStarred { get; set; }
+
     }
 }

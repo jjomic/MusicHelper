@@ -28,5 +28,7 @@ namespace MusicHelp.Models
         [Display(Name ="Please enter the link for this lesson.")]
         public string LessonLink { get; set; }
         public DateTimeOffset? ModifiedUtc { get; set; }
+        [UIHint("IsStarred")]
+        public bool IsStarred { get; set; }
     }
 }

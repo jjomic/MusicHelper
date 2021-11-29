@@ -49,7 +49,8 @@ namespace MusicHelp.Services
                                 {
                                     InstrumentID = e.InstrumentID,
                                     InstrumentName = e.InstrumentName,
-                                    CreatedUtc = e.CreatedUtc
+                                    CreatedUtc = e.CreatedUtc,
+                                    IsStarred = e.IsStarred
                                 }
                         );
                 return query.ToArray();

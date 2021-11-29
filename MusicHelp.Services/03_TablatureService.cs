@@ -63,7 +63,8 @@ namespace MusicHelp.Services
                                     TabDifficulty = e.TabDifficulty,
                                     TabSource = e.TabSource,
                                     TabLink = e.TabLink,
-                                    CreatedUtc = e.CreatedUtc
+                                    CreatedUtc = e.CreatedUtc,
+                                    IsStarred = e.IsStarred
                                 }
                         );
                 return query.ToArray();

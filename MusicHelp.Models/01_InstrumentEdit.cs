@@ -14,5 +14,7 @@ namespace MusicHelp.Models
         [MinLength(1, ErrorMessage ="You didn't enter anything...")]
         public string InstrumentName { get; set; }
         public DateTimeOffset? ModifiedUtc { get; set; }
+        [UIHint("Starred")]
+        public bool IsStarred { get; set; }
     }
 }
