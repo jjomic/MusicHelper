@@ -26,5 +26,7 @@ namespace MusicHelp.Models
         public string LessonLink { get; set; }
         [Display(Name = "Date Added")]
         public DateTimeOffset CreatedUtc { get; set; }
+        [UIHint("Starred")]
+        public bool IsStarred { get; set; }
     }
 }

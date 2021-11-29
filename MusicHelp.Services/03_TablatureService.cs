@@ -105,6 +105,7 @@ namespace MusicHelp.Services
                         .Tabs
                         .Single(e => e.TabID == model.TabID);
 
+                entity.TabID = model.TabID;
                 entity.TabName = model.TabName;
                 entity.InstrumentID = model.InstrumentID;
                 entity.TabArtist = model.TabArtist;

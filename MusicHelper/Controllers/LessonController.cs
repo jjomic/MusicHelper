@@ -73,7 +73,8 @@ namespace MusicHelper.Controllers
                     LessonDescription = detail.LessonDescription,
                     LessonDifficulty = detail.LessonDifficulty,
                     LessonSource = detail.LessonSource,
-                    LessonLink = detail.LessonLink
+                    LessonLink = detail.LessonLink,
+                    IsStarred = detail.IsStarred
                 };
 
             PopulateInstrumentDropdownList();
@@ -103,7 +104,7 @@ namespace MusicHelper.Controllers
             {
                 PopulateInstrumentDropdownList();
                 TempData["SaveResult"] = "Lesson information has been updated.";
-                return RedirectToAction("Lesson Index");
+                return RedirectToAction("Index");
             }
 
             ModelState.AddModelError("", "This lesson could not be updated.");

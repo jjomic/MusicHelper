@@ -78,6 +78,10 @@
     <Compile Include="Migrations\202111292025083_Starred Method Added.designer.cs">
       <DependentUpon>202111292025083_Starred Method Added.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202111292155399_More Work With Starred Methods.cs" />
+    <Compile Include="Migrations\202111292155399_More Work With Starred Methods.designer.cs">
+      <DependentUpon>202111292155399_More Work With Starred Methods.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -91,6 +95,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202111292025083_Starred Method Added.resx">
       <DependentUpon>202111292025083_Starred Method Added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111292155399_More Work With Starred Methods.resx">
+      <DependentUpon>202111292155399_More Work With Starred Methods.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
