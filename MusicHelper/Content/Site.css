@@ -22,3 +22,40 @@ select,
 textarea {
     max-width: 280px;
 }
+
+/*Index View CSS settings*/
+.board{
+    border: 1px solid black;
+    display: block;
+    padding: 1em 1em;
+}
+
+.board-container{
+    padding: 1em 1em;
+}
+
+.board-card {
+    border: 2px solid black;
+    border-radius: 10px;
+    min-height: 8em;
+    min-width: 10em;
+    background-color: #bff5c5;
+}
+
+.card-header {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    color: white;
+    font-size: 18px;
+    background-color: #3d8a46;
+}
+
+.card-body {
+    padding: 7px 0px 0px 0px;
+    font-size: 14px;
+    color: #003300;
+}
+
+.card-editor{
+    padding: 0px 0px 0px 2px;
+}

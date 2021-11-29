@@ -19,7 +19,7 @@ namespace MusicHelper.Controllers
         {
             var service = CreateUnauthenticatedTablatureService();
             var model = service.GetTabs();
-
+            PopulateInstrumentDropDownList();
             return View(model);
         }
         [Authorize]
@@ -141,7 +141,7 @@ namespace MusicHelper.Controllers
 
         public void PopulateInstrumentDropDownList()
         {
-            ViewBag.Instruments = _db.Instruments.Select(inst => new SelectListItem { Value = inst.InstrumentID.ToString(), Text = inst.InstrumentName }).ToList();
+            ViewBag.Instruments = new SelectList(new InstrumentService().GetInstruments(), "InstrumentID", "InstrumentName");
         }
 
         private TablatureService CreateTablatureService()

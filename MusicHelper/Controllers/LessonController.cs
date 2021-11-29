@@ -18,7 +18,7 @@ namespace MusicHelper.Controllers
         {
             var service = CreateUnauthenticatedLessonService();
             var model = service.GetLessons();
-
+            PopulateInstrumentDropdownList();
             return View(model);
         }
 
@@ -138,7 +138,7 @@ namespace MusicHelper.Controllers
 
         private void PopulateInstrumentDropdownList()
         {
-            ViewBag.Instruments = _db.Instruments.Select(inst => new SelectListItem { Value = inst.InstrumentID.ToString(), Text = inst.InstrumentName }).ToList();
+            ViewBag.Instruments = new SelectList(new InstrumentService().GetInstruments(), "InstrumentID", "InstrumentName");
         }
 
         private LessonService CreateLessonService()

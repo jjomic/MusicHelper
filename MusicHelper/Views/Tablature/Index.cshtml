@@ -1,70 +1,76 @@
 ﻿@model IEnumerable<MusicHelp.Models.TablatureListItem>
 
 @{
-    ViewBag.Title = "Tablature Index";
+    ViewBag.Title = "Index";
+    SelectList Instruments = ViewBag.Instruments;
 }
 
-<h2>Index</h2>
+<h2>Tablature</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Add New Tab", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.TabID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Instrument)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TabName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TabArtist)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TabAlbum)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TabDifficulty)
-        </th>
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CreatedUtc)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.TabID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Instrument.InstrumentName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TabName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TabArtist)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TabAlbum)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TabDifficulty)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CreatedUtc)
-        </td>
-        <td>
-            @Html.ActionLink("Update", "Edit", new { id = item.TabID }) |
-            @Html.ActionLink("Details", "Details", new { id = item.TabID }) |
-            @Html.ActionLink("Remove", "Delete", new { id = item.TabID })
-        </td>
-    </tr>
-}
+<ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#all">All Tabs</a></li>
+    @foreach (var instrument in Instruments)
+    {
+        <li><a data-toggle="tab" href="#@instrument.Value">@instrument.Text</a></li>
+    }
+    <li><a data-toggle="tab" href="#fav">Favorited</a></li>
+</ul>
 
-</table>
+<div class="board row">
+    <div class="tab-content">
+        <div id="all" class="tab-pane fade in active">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-3 board-container">
+                    <div class="board-card">
+                        <div class="card-header text-center">
+                            @Html.ActionLink(item.TabName, "Details", new { id = item.TabID }, new { @style = "color:white;" })
+                        </div>
+                        <div class="card-body">
+                            <ul>
+                                <li>Artist: @Html.DisplayFor(modelItem => item.TabArtist)</li>
+                                <li>For: @Html.DisplayFor(modelItem => item.Instrument.InstrumentName)</li>
+                                <li>Difficulty: @Html.DisplayFor(modelItem => item.TabDifficulty)</li>
+                            </ul>
+                        </div>
+                        <div class="card-editor text-center">
+                            @Html.ActionLink("Update", "Edit", new { id = item.TabID })
+                            @Html.ActionLink("Remove", "Delete", new { id = item.TabID })
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
+        @foreach (var instrument in Instruments)
+        {
+            <div id="#@instrument.Value" class="tab-pane fade">
+                @foreach (var item in Model.Where(i => i.InstrumentID.ToString() == instrument.Value))
+                {
+                    <div class="col-md-3 board-container">
+                        <div class="board-card">
+                            <div class="card-header text-center">
+                                @Html.ActionLink(item.TabName, "Details", new { id = item.TabID }, new { @style = "color:white;" })
+                            </div>
+                            <div class="card-body">
+                                <ul>
+                                    <li>Artist: @Html.DisplayFor(modelItem => item.TabArtist)</li>
+                                    <li>For: @Html.DisplayFor(modelItem => item.Instrument.InstrumentName)</li>
+                                    <li>Difficulty: @Html.DisplayFor(modelItem => item.TabDifficulty)</li>
+                                </ul>
+                            </div>
+                            <div class="card-editor text-center">
+                                @Html.ActionLink("Update", "Edit", new { id = item.TabID })
+                                @Html.ActionLink("Remove", "Delete", new { id = item.TabID })
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+    </div>
+</div>
