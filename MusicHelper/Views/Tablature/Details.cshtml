@@ -6,9 +6,10 @@
 
 <h2>Details</h2>
 
-<div>
-    <h4>TablatureDetail</h4>
-    <hr />
+<div class="form-wrapper">
+    <h4 class="form-header text-center">@Html.DisplayFor(model => model.TabName)</h4>
+    <h5 class="text-center">@Html.DisplayFor(model => model.TabArtist) • @Html.DisplayFor(model => model.TabAlbum) </h5>
+    <h5 class="text-center">@Html.DisplayFor(model => model.Instrument.InstrumentName)</h5>
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.TabID)
@@ -16,38 +17,6 @@
 
         <dd>
             @Html.DisplayFor(model => model.TabID)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Instrument)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Instrument.InstrumentName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TabName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TabName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TabArtist)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TabArtist)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TabAlbum)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TabAlbum)
         </dd>
 
         <dt>
@@ -75,8 +44,8 @@
         </dd>
 
     </dl>
+    <p class="text-center">
+        @Html.ActionLink("Update", "Edit", new { id = Model.TabID }, new { @style = "color: #003300;" }) •
+        @Html.ActionLink("Return to Tabs", "Index", new { @style = "color: #003300;" })
+    </p>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to List", "Tablature Index")
-</p>

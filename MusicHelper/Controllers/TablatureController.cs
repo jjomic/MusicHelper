@@ -55,7 +55,7 @@ namespace MusicHelper.Controllers
 
         public ActionResult Details(int id)
         {
-            var svc = CreateTablatureService();
+            var svc = CreateUnauthenticatedTablatureService();
             var model = svc.GetTabByID(id);
             return View(model);
         }

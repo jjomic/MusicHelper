@@ -4,11 +4,8 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
-
-<div>
-    <h4>InstrumentDetail</h4>
-    <hr />
+<div class="form-wrapper">
+    <h4 class="form-header text-center">@Html.DisplayFor(model => model.InstrumentName)</h4>
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.InstrumentID)
@@ -16,14 +13,6 @@
 
         <dd>
             @Html.DisplayFor(model => model.InstrumentID)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.InstrumentName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.InstrumentName)
         </dd>
 
         <dt>
@@ -35,8 +24,8 @@
         </dd>
 
     </dl>
+    <p class="text-center">
+        @Html.ActionLink("Update", "Edit", new { id = Model.InstrumentID }, new { @style = "color: #003300;" }) •
+        @Html.ActionLink("Return to Instruments", "Index", new { @style = "color: #003300;" })
+    </p>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

@@ -49,7 +49,7 @@ namespace MusicHelper.Controllers
 
         public ActionResult Details(int id)
         {
-            var svc = CreateInstrumentService();
+            var svc = CreateUnauthenticatedInstrumentService();
             var model = svc.GetInstrumentByID(id);
             return View(model);
         }
