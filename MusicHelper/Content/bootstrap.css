@@ -4,8 +4,19 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+
+@font-face {
+    font-family: 'Oswald-Regular';
+    src: url('../fonts/Oswald-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'JosefinSans-Medium';
+    src: url('../fonts/JosefinSans-Medium.ttf') format('truetype');
+}
+
 html {
-  font-family: sans-serif;
+  font-family: Oswald-Regular;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }

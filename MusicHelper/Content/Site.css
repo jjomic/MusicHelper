@@ -1,4 +1,14 @@
-﻿body {
+﻿@font-face {
+    font-family: 'Oswald-Regular';
+    src: url('../fonts/Oswald-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'JosefinSans-Medium';
+    src: url('../fonts/JosefinSans-Medium.ttf') format('truetype');
+}
+body {
+    font-family: Oswald-Regular;
     padding-top: 50px;
     padding-bottom: 20px;
     background-color: lightgray;
@@ -25,11 +35,26 @@ textarea {
 }
 
 /*Navbar CSS*/
+.home-button{
+    margin-top: 0.5em;
+}
 .navbar {
     background-color: darkgreen;
 }
 
 /*HomePage CSS*/
+
+.jumbo-wrapper {
+    margin-top: 1em;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: #bff5c5;
+    min-width: 1130px; 
+}
+
+.jumbo-container{
+    padding-top: 1em;
+}
 
 .home-container {
     padding: 0.5em 0.5em;
@@ -196,8 +221,14 @@ textarea {
 /*About page styling*/
 .about{
     padding: 0.5em 0.5em;
+    font-size: 24px;
     font-weight: bold;
     font-style: italic;
+}
+
+/*Contact Styling*/
+.contact-text{
+    font-size: 20px;
 }
 
 /*Login Styling*/
