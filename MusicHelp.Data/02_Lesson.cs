@@ -17,8 +17,8 @@ namespace MusicHelp.Data
         public Guid OwnerID { get; set; }
         [ForeignKey(nameof(Instrument))]
         public int InstrumentID { get; set; }
-        public virtual Instrument Instrument { get; set; }
         public virtual List<Tablature> _tabs { get; set; }
+        public virtual Instrument Instrument { get; set; }
         [Required]
         [Display(Name="Please enter the name of the lesson.")]
         [MinLength(5, ErrorMessage = "Please provide a more complete title.")]

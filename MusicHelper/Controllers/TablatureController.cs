@@ -45,7 +45,7 @@ namespace MusicHelper.Controllers
             {
                 PopulateInstrumentDropDownList();
                 TempData["SaveResult"] = "Song added to the database.";
-                return RedirectToAction("Tablature Index");
+                return RedirectToAction("Index");
             };
 
             ModelState.AddModelError("", "This song could not be added.");

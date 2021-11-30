@@ -16,10 +16,11 @@ namespace MusicHelp.Data
         [ForeignKey(nameof(Instrument))]
         public int InstrumentID { get; set; }
         public virtual Instrument Instrument { get; set; }
+
         [ForeignKey(nameof(Lesson))]
-        public int LessonID { get; set; }
-        public Guid OwnerID { get; set; }
+        public int? LessonID { get; set; }
         public virtual Lesson Lesson { get; set; }
+        public Guid OwnerID { get; set; }
         [Required]
         [Display(Name = "Song Name")]
         public string TabName { get; set; }

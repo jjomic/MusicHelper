@@ -23,7 +23,25 @@ textarea {
     max-width: 280px;
 }
 
-/*Index View CSS settings*/
+/*Index View CSS settings for Instruments*/
+
+.instrument{
+    border: 1px solid black;
+    display: block;
+    padding: 1em 1em;
+}
+
+.one-container {
+    padding: 1em 1em;
+}
+
+.one-card{
+    border: 2px solid black;
+    border-radius: 15px;
+    min-height: 15em;
+}
+
+/*Index View CSS settings for Lessons & Tablature*/
 .board{
     border: 1px solid black;
     display: block;

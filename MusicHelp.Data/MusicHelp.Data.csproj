@@ -82,6 +82,10 @@
     <Compile Include="Migrations\202111292155399_More Work With Starred Methods.designer.cs">
       <DependentUpon>202111292155399_More Work With Starred Methods.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202111300354122_Tablature Edits.cs" />
+    <Compile Include="Migrations\202111300354122_Tablature Edits.designer.cs">
+      <DependentUpon>202111300354122_Tablature Edits.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -98,6 +102,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202111292155399_More Work With Starred Methods.resx">
       <DependentUpon>202111292155399_More Work With Starred Methods.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111300354122_Tablature Edits.resx">
+      <DependentUpon>202111300354122_Tablature Edits.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

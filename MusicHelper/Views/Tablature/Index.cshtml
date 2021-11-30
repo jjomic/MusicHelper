@@ -29,6 +29,7 @@
                     <div class="board-card">
                         <div class="card-header text-center">
                             @Html.ActionLink(item.TabName, "Details", new { id = item.TabID }, new { @style = "color:white;" })
+                            @Html.DisplayFor(modelItem => item.IsStarred, new { Id = item.TabID })
                         </div>
                         <div class="card-body">
                             <ul>
@@ -55,6 +56,7 @@
                         <div class="board-card">
                             <div class="card-header text-center">
                                 @Html.ActionLink(item.TabName, "Details", new { id = item.TabID }, new { @style = "color:white;" })
+                                @Html.DisplayFor(modelItem => item.IsStarred, new { Id = item.TabID })
                             </div>
                             <div class="card-body">
                                 <ul>
@@ -72,6 +74,34 @@
                 }
             </div>
         }
+
+        <div id="fav" class="tab-pane fade in active">
+            @foreach (var item in Model)
+            {
+                if (item.IsStarred)
+                {
+                    <div class="col-md-3 board-container">
+                        <div class="board-card">
+                            <div class="card-header text-center">
+                                @Html.ActionLink(item.TabName, "Details", new { id = item.TabID }, new { @style = "color:white;" })
+                                @Html.DisplayFor(modelItem => item.IsStarred, new { Id = item.TabID })
+                            </div>
+                            <div class="card-body">
+                                <ul>
+                                    <li>Artist: @Html.DisplayFor(modelItem => item.TabArtist)</li>
+                                    <li>For: @Html.DisplayFor(modelItem => item.Instrument.InstrumentName)</li>
+                                    <li>Difficulty: @Html.DisplayFor(modelItem => item.TabDifficulty)</li>
+                                </ul>
+                            </div>
+                            <div class="card-editor text-center">
+                                @Html.ActionLink("Update", "Edit", new { id = item.TabID })
+                                @Html.ActionLink("Remove", "Delete", new { id = item.TabID })
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
     </div>
 </div>
 
@@ -82,12 +112,12 @@
                 .css({ "cursor": "pointer" })
                 .click(function (e) {
                     var target = $(e.target);
-                    var noteId = target.attr("data-id");
+                    var tabId = target.attr("data-id");
                     var starSet = target.hasClass("glyphicon-star");
 
                     $.ajax({
                         method: starSet ? "DELETE" : "PUT",
-                        url: "/api/note/" + noteId + "/star",
+                        url: "/api/Tablature/" + tabId + "/star",
                         data: null
                     })
                         .done(function (r) {
