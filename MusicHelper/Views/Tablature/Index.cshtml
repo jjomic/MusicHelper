@@ -5,16 +5,16 @@
     SelectList Instruments = ViewBag.Instruments;
 }
 
-<h2>Tablature</h2>
-
-<ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#all">All Tabs</a></li>
-    @foreach (var instrument in Instruments)
-    {
-        <li><a data-toggle="tab" href="#@instrument.Value">@instrument.Text</a></li>
-    }
-    <li><a data-toggle="tab" href="#fav">Favorited</a></li>
-</ul>
+<div class="tab-menu">
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#all">All Tabs</a></li>
+        @foreach (var instrument in Instruments)
+        {
+            <li><a data-toggle="tab" href="#@instrument.Value">@instrument.Text</a></li>
+        }
+        <li><a data-toggle="tab" href="#fav">Favorites</a></li>
+    </ul>
+</div>
 
 <div class="board row">
     <div class="tab-content">

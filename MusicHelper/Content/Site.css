@@ -59,9 +59,11 @@ textarea {
 }
 
 /*Index View CSS settings for Lessons & Tablature*/
-.board{
+.board {
     display: block;
-    padding: 0.75em 0.75em;
+    padding: 0.4em 0.75em;
+    background-color: #e6ffe6;
+    border-radius: 8px;
 }
 
 .board-container{
@@ -92,4 +94,26 @@ textarea {
 
 .card-editor{
     padding: 0px 0px 0px 2px;
+    font-weight: bold;
+}
+
+.tab-menu{
+    margin: 2em 0 0 0;
+}
+
+.nav{
+    font-size: 16px;
+}
+
+.nav a:link{
+    color: #003300;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    color: #3d8a46;
+    cursor: default;
+    background-color: #e6ffe6;
+    border: 1px solid #e6ffe6;
+    border-bottom-color: #e6ffe6;
+    font-weight: bold;
 }
