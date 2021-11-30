@@ -7,17 +7,13 @@
 
 <h2>Lessons</h2>
 
-<p>
-    @Html.ActionLink("Add New Lesson", "Create")
-</p>
-
 <ul class="nav nav-tabs">
     <li class="active"><a data-toggle="tab" href="#all">All Lessons</a></li>
     @foreach (var instrument in Instruments)
     {
         <li><a data-toggle="tab" href="#@instrument.Value">@instrument.Text</a></li>
     }
-    <li><a data-toggle="tab" href="#fav">Favorited</a></li>
+    <li><a data-toggle="tab" href="#fav">Favorites</a></li>
 </ul>
 
 <div class="board row">
@@ -38,7 +34,7 @@
                             </ul>
                         </div>
                         <div class="card-editor text-center">
-                            @Html.ActionLink("Update", "Edit", new { id = item.LessonID })
+                            @Html.ActionLink("Update", "Edit", new { id = item.LessonID }) •
                             @Html.ActionLink("Remove", "Delete", new { id = item.LessonID })
                         </div>
                     </div>
@@ -64,7 +60,7 @@
                                 </ul>
                             </div>
                             <div class="card-editor text-center">
-                                @Html.ActionLink("Update", "Edit", new { id = item.LessonID })
+                                @Html.ActionLink("Update", "Edit", new { id = item.LessonID }) •
                                 @Html.ActionLink("Remove", "Delete", new { id = item.LessonID })
                             </div>
                         </div>
@@ -91,7 +87,7 @@
                                 </ul>
                             </div>
                             <div class="card-editor text-center">
-                                @Html.ActionLink("Update", "Edit", new { id = item.LessonID })
+                                @Html.ActionLink("Update", "Edit", new { id = item.LessonID }) •
                                 @Html.ActionLink("Remove", "Delete", new { id = item.LessonID })
                             </div>
                         </div>
@@ -99,6 +95,15 @@
                 }
             }
         </div>
+    </div>
+</div>
+
+<div class="index-footer row bottom text-center">
+    <p>
+        Don't see what you're looking for? Have something to add? @Html.ActionLink("Add a new lesson", "Create", new { @style = "color:#003300;" }) to the site!
+    </p>
+    <div class="index-footer-two row bottom text-center">
+        Must be logged in to an active account.
     </div>
 </div>
 

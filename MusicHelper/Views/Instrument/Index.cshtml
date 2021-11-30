@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<MusicHelp.Models.InstrumentListItem>
 
 @{
-    ViewBag.Title = "Instrument Index";
+    ViewBag.Title = "Index";
 }
 
 <h3>Here's our current list of supported instruments...</h3>
@@ -23,11 +23,15 @@
     }
 </div>
 
-<div class="instrument-footer row bottom text-center">
+<div class="index-footer row bottom text-center">
     <p>
-        Don't see what you're looking for? @Html.ActionLink("Add New Instrument!", "Create")
+        Don't see what you're looking for? @Html.ActionLink("Add a new instrument", "Create", new { @style = "color:#003300;" }) to the site!
     </p>
+    <div class="index-footer-two row bottom text-center">
+        Must be logged in to an active account.
+    </div>
 </div>
+
 
 <!--Starred JavaScript in case starring method wants to get added to Instruments at later time.-->
 @section scripts {

@@ -7,10 +7,6 @@
 
 <h2>Tablature</h2>
 
-<p>
-    @Html.ActionLink("Add New Tab", "Create")
-</p>
-
 <ul class="nav nav-tabs">
     <li class="active"><a data-toggle="tab" href="#all">All Tabs</a></li>
     @foreach (var instrument in Instruments)
@@ -39,7 +35,7 @@
                             </ul>
                         </div>
                         <div class="card-editor text-center">
-                            @Html.ActionLink("Update", "Edit", new { id = item.TabID })
+                            @Html.ActionLink("Update", "Edit", new { id = item.TabID }) •
                             @Html.ActionLink("Remove", "Delete", new { id = item.TabID })
                         </div>
                     </div>
@@ -66,7 +62,7 @@
                                 </ul>
                             </div>
                             <div class="card-editor text-center">
-                                @Html.ActionLink("Update", "Edit", new { id = item.TabID })
+                                @Html.ActionLink("Update", "Edit", new { id = item.TabID }) •
                                 @Html.ActionLink("Remove", "Delete", new { id = item.TabID })
                             </div>
                         </div>
@@ -94,7 +90,7 @@
                                 </ul>
                             </div>
                             <div class="card-editor text-center">
-                                @Html.ActionLink("Update", "Edit", new { id = item.TabID })
+                                @Html.ActionLink("Update", "Edit", new { id = item.TabID }) •
                                 @Html.ActionLink("Remove", "Delete", new { id = item.TabID })
                             </div>
                         </div>
@@ -102,6 +98,15 @@
                 }
             }
         </div>
+    </div>
+</div>
+
+<div class="index-footer row bottom text-center">
+    <p>
+        Don't see what you're looking for? Have something to add? @Html.ActionLink("Add some new tabs", "Create", new { @style = "color:#003300;" }) to the site!
+    </p>
+    <div class="index-footer-two row bottom text-center">
+        Must be logged in to an active account.
     </div>
 </div>
 

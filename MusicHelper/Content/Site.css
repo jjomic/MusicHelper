@@ -46,22 +46,33 @@ textarea {
     font-size: 30px;
 }
 
+.index-footer{
+    margin: 0.75em;
+    font-weight: bold;
+}
+
+.index-footer-two{
+    padding: 0em;
+    color: darkslategray;
+    font-size: 12px;
+    font-style: italic;
+}
+
 /*Index View CSS settings for Lessons & Tablature*/
 .board{
-    border: 1px solid black;
     display: block;
-    padding: 1em 1em;
+    padding: 0.75em 0.75em;
 }
 
 .board-container{
-    padding: 1em 1em;
+    padding: 0.5em 0.5em;
 }
 
 .board-card {
     border: 2px solid black;
     border-radius: 10px;
     min-height: 8em;
-    min-width: 10em;
+    min-width: 19em;
     background-color: #bff5c5;
 }
 
