@@ -199,3 +199,20 @@ textarea {
     font-weight: bold;
     font-style: italic;
 }
+
+/*Login Styling*/
+.login-board{
+    margin: 2em 2em;
+}
+
+.login-container{
+    padding: 0.5em 0.5em;
+}
+
+.login-card {
+    border: 2px solid darkgreen;
+    border-radius: 8px;
+    margin: 1.0em 3.0em;
+    background-color: #bff5c5;
+    min-height: 23em;
+}
