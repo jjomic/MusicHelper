@@ -24,9 +24,28 @@ textarea {
     max-width: 280px;
 }
 
-/*Navbard CSS*/
+/*Navbar CSS*/
 .navbar {
     background-color: darkgreen;
+}
+
+/*HomePage CSS*/
+
+.home-container {
+    padding: 0.5em 0.5em;
+}
+
+.home-card {
+    margin: 0 0.1em;
+    border: 2px solid black;
+    border-radius: 10px;
+    min-height: 13em;
+    max-width: 27em;
+    background-color: #bff5c5;
+}
+
+.home-card > h2{
+
 }
 
 /*Index View CSS settings for Instruments*/
