@@ -1,48 +1,18 @@
 ﻿@model MusicHelp.Models.InstrumentDetail
 
 @{
-    ViewBag.Title = "Delete an Instrument";
+    ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
+<h2>WAIT!</h2>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>InstrumentDetail</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.InstrumentID)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.InstrumentID)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.InstrumentName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.InstrumentName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.CreatedUtc)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CreatedUtc)
-        </dd>
-
-    </dl>
+<h3>Are you sure you want to delete @Html.DisplayFor(model => model.InstrumentName) from MusicHelper?</h3>
 
     @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Instrument Index")
+            <input type="submit" value="Yes" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
         </div>
     }
-</div>

@@ -4,19 +4,19 @@
     ViewBag.Title = "Instrument Index";
 }
 
-<h2>Here's our current list of supported instruments...</h2>
+<h3>Here's our current list of supported instruments...</h3>
 
 <div class="instrument row">
     @foreach (var item in Model)
     {
-        <div class="col-md-6 one-container">
-            <div class="one-card">
-                <div class="one-header text-center">
-                    @Html.ActionLink(item.InstrumentName, "Details", new { id = item.InstrumentID })
+        <div class="instrument-container row">
+            <div class="instrument-card">
+                <div class="instrument-header text-center">
+                    @Html.ActionLink(item.InstrumentName, "Details", new { id = item.InstrumentID }, new { @style = "color:#003300;" })
                 </div>
-                <div class="one-body text-center">
-                    @Html.ActionLink("Update", "Edit", new { id = item.InstrumentID }) •
-                    @Html.ActionLink("Remove", "Delete", new { id = item.InstrumentID })
+                <div class="instrument-body text-center">
+                    @Html.ActionLink("Update", "Edit", new { id = item.InstrumentID }, new { @style = "color:#003300;" }) •
+                    @Html.ActionLink("Remove", "Delete", new { id = item.InstrumentID }, new { @style = "color:#003300;" })
                 </div>
             </div>
         </div>
