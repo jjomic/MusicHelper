@@ -173,3 +173,10 @@ textarea {
 
 .form-group{
 }
+
+/*About page styling*/
+.about{
+    padding: 0.5em 0.5em;
+    font-weight: bold;
+    font-style: italic;
+}
