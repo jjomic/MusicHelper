@@ -24,6 +24,11 @@ textarea {
     max-width: 280px;
 }
 
+/*Navbard CSS*/
+.navbar {
+    background-color: darkgreen;
+}
+
 /*Index View CSS settings for Instruments*/
 
 .instrument{
@@ -147,6 +152,24 @@ textarea {
     color: green;
 }
 
-.navbar{
-    background-color: darkgreen;
+/*Create & Edit Form CSS Settings*/
+.form-wrapper {
+    margin: 2em 1em;
+    border: 2px solid darkgreen;
+    border-radius: 10px;
+    background-color: #bff5c5;
+}
+
+
+.form-horizontal{
+    padding: 1em 1em;
+}
+
+.form-header{
+    color: darkgreen;
+    font-size: 18px;
+    text-decoration: underline;
+}
+
+.form-group{
 }
