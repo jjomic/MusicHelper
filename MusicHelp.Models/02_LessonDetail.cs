@@ -10,7 +10,7 @@ namespace MusicHelp.Models
 {
     public class LessonDetail
     {
-        [Display(Name = "Lesson ID")]
+        [Display(Name = "ID")]
         public int LessonID { get; set; }
         public int InstrumentID { get; set; }
         [Display(Name = "Lesson is for...")]

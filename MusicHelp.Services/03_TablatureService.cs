@@ -114,6 +114,7 @@ namespace MusicHelp.Services
                 entity.TabSource = model.TabSource;
                 entity.TabLink = model.TabLink;
                 entity.ModifiedUtc = DateTimeOffset.UtcNow;
+                entity.IsStarred = model.IsStarred;
 
                 return ctx.SaveChanges() == 1;
             }

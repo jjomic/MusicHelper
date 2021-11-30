@@ -75,7 +75,8 @@ namespace MusicHelper.Controllers
                     TabAlbum = detail.TabAlbum,
                     TabDifficulty = detail.TabDifficulty,
                     TabSource = detail.TabSource,
-                    TabLink = detail.TabLink
+                    TabLink = detail.TabLink,
+                    IsStarred = detail.IsStarred
                 };
 
             PopulateInstrumentDropDownList();
@@ -106,7 +107,7 @@ namespace MusicHelper.Controllers
             {
                 PopulateInstrumentDropDownList();
                 TempData["SaveResult"] = "Song information has been updated.";
-                return RedirectToAction("Lesson Index");
+                return RedirectToAction("Index");
             }
 
             ModelState.AddModelError("", "This song could not be updated.");
@@ -134,7 +135,7 @@ namespace MusicHelper.Controllers
 
             TempData["SaveResult"] = "This song's tab has now been deleted";
 
-            return RedirectToAction("Tablature Index");
+            return RedirectToAction("Index");
         }
 
         //Helper methods

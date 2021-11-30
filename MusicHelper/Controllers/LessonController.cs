@@ -132,7 +132,7 @@ namespace MusicHelper.Controllers
 
             TempData["SaveResult"] = "This lesson has now been deleted";
 
-            return RedirectToAction("Lesson Index");
+            return RedirectToAction("Index");
         }
 
         //Helper Methods
