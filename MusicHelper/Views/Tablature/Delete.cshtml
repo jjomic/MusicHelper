@@ -4,17 +4,19 @@
     ViewBag.Title = "Delete Tab";
 }
 
-<h2>WAIT!</h2>
+<div class="delete-box text-center">
+    <h2>WAIT!</h2>
 
-<h3>Are you sure you want to remove this tab for "@Html.DisplayFor(model => model.TabName)" from MusicHelper?</h3>
+    <h3>Are you sure you want to remove this tab for "@Html.DisplayFor(model => model.TabName)" from MusicHelper?</h3>
 
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
 
-    <div class="form-actions no-color">
-        <input type="submit" value="Yes" class="btn btn-default" /> |
-        @Html.ActionLink("Return to Tabs", "Index")
-    </div>
-}
+        <div class="form-actions no-color">
+            <input type="submit" value="Yes" class="btn btn-sm" /> |
+            @Html.ActionLink("Return to Tabs", "Index", new { @style = "color:#003300;" })
+        </div>
+    }
+</div>

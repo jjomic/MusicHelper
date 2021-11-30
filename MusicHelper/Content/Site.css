@@ -117,3 +117,34 @@ textarea {
     border-bottom-color: #e6ffe6;
     font-weight: bold;
 }
+
+/*Delete Views CSS*/
+
+.delete-box {
+    color: #003300;
+    margin: 10em 0.5em;
+    padding: 1em 0.5em;
+    text-align: center;
+    background-color: #e6ffe6;
+    border: 2px solid black;
+    border-radius: 8px;
+}
+
+.delete-box > h2{
+    color: red;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.btn {
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: darkgreen;
+    color: #e6ffe6;
+}
+
+.btn > a:hover{
+    color: green;
+}
+
+
